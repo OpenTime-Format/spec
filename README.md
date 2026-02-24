@@ -44,7 +44,7 @@ OpenTime supports six item types that compose into any workflow:
 | **Event** | Blocks of time on your calendar |
 | **Appointment** | Events with attendees |
 
-Items can be nested inside **Odysseys** — containers that hold any combination of types. A client project. A product launch. A semester of study.
+Items can be nested inside **projects** — containers that hold any combination of types. A client project. A product launch. A semester of study.
 
 ## Extensibility
 
