@@ -1,0 +1,25 @@
+# minimal-tasks.ot
+# A minimal OpenTime file using only task items.
+
+opentime_version: "0.2"
+default_timezone: "Asia/Tokyo"
+
+items:
+  - type: task
+    id: task_inbox_1
+    title: "Brain dump ideas for Elysium"
+    status: todo
+    tags: ["inbox", "elysium"]
+
+  - type: task
+    id: task_inbox_2
+    title: "Book dentist appointment"
+    status: todo
+    tags: ["life-admin"]
+
+  - type: task
+    id: task_inbox_3
+    title: "Refactor OpenTime parser"
+    status: in_progress
+    estimate_minutes: 90
+    tags: ["dev", "opentime"]

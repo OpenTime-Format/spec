@@ -1,0 +1,167 @@
+# OpenTime Sample File v0.2
+# This file demonstrates all 7 item types
+
+opentime_version: "0.2"
+default_timezone: "Asia/Tokyo"
+generated_by: "Elysium 0.3"
+created_at: "2025-12-02T12:00:00Z"
+
+items:
+  # Goals - Single-step intentions/outcomes
+  - type: goal
+    id: goal_novel
+    title: "Finish Novel Draft"
+    kind: goal
+    target_date: "2026-03-31"
+    progress: 0.33
+    project_id: od_novel
+    tags: ["writing", "major"]
+    notes: |
+      My first novel! Aiming for 80,000 words.
+      Genre: Science Fiction
+
+  - type: goal
+    id: goal_fitness
+    title: "Lose 5kg"
+    kind: goal
+    target_date: "2026-01-01"
+    progress: 0.2
+    tags: ["health", "priority"]
+
+  # Tasks - Atomic actions
+  - type: task
+    id: task_write
+    title: "Write 500 words"
+    status: todo
+    due: "2025-12-04"
+    scheduled_start: "2025-12-04T09:00:00+09:00"
+    estimate_minutes: 45
+    priority: 8
+    goal_id: goal_novel
+    project_id: od_novel
+    tags: ["writing", "daily"]
+
+  - type: task
+    id: task_outline
+    title: "Create chapter outline"
+    status: done
+    due: "2025-12-01"
+    estimate_minutes: 120
+    actual_minutes: 90
+    goal_id: goal_novel
+    project_id: od_novel
+
+  # Habits - Recurring behaviors
+  - type: habit
+    id: habit_walk
+    title: "Morning Walk"
+    pattern:
+      freq: daily
+    window:
+      start_time: "06:00"
+      end_time: "08:00"
+    streak:
+      current: 12
+      longest: 21
+    goal_id: goal_fitness
+    tags: ["exercise", "morning"]
+
+  - type: habit
+    id: habit_read
+    title: "Read for 30 minutes"
+    pattern:
+      freq: daily
+    streak:
+      current: 5
+      longest: 45
+    notes: "Currently reading: Dune by Frank Herbert"
+
+  # Reminders - Lightweight notifications
+  - type: reminder
+    id: rem_water
+    title: "Drink water"
+    time: "2025-12-03T14:00:00+09:00"
+    repeat: "FREQ=HOURLY;COUNT=8"
+
+  - type: reminder
+    id: rem_meds
+    title: "Take vitamins"
+    time: "2025-12-03T08:00:00+09:00"
+    repeat: "FREQ=DAILY"
+    tags: ["health"]
+
+  # Events - Blocks of time
+  - type: event
+    id: ev_deepwork
+    title: "Deep Work – Novel"
+    start: "2025-12-03T09:00:00+09:00"
+    end: "2025-12-03T11:00:00+09:00"
+    goal_id: goal_novel
+    project_id: od_novel
+    tags: ["focus", "writing"]
+    notes: "No distractions. Phone on DND."
+
+  - type: event
+    id: ev_gym
+    title: "Gym Session"
+    start: "2025-12-03T17:00:00+09:00"
+    end: "2025-12-03T18:30:00+09:00"
+    location: "Gold's Gym Shibuya"
+    recurrence: "FREQ=WEEKLY;BYDAY=MO,WE,FR"
+    goal_id: goal_fitness
+    tags: ["exercise"]
+
+  # Appointments - Events with attendees
+  - type: appointment
+    id: ap_dentist
+    title: "Dentist Cleaning"
+    start: "2025-12-10T15:00:00+09:00"
+    end: "2025-12-10T16:00:00+09:00"
+    attendees: ["Dr. Sato", "Ryan"]
+    location: "Izumo Dental Clinic"
+    provider: "dentist"
+    tags: ["health", "recurring"]
+
+  - type: appointment
+    id: ap_meeting
+    title: "Project Sync"
+    start: "2025-12-05T10:00:00+09:00"
+    end: "2025-12-05T11:00:00+09:00"
+    attendees: ["Alice", "Bob", "Charlie"]
+    location: "Zoom"
+    provider: "Zoom"
+    notes: "Discuss Q1 roadmap"
+
+  # Projects - Containers for other items
+  - type: project
+    id: od_novel
+    title: "Write My First Novel"
+    kind: project
+    children:
+      - goal_novel
+      - task_write
+      - task_outline
+      - ev_deepwork
+    progress: 0.33
+    target_date: "2026-03-31"
+    tags: ["creative", "long-term"]
+    notes: |
+      My novel-writing journey.
+
+      Milestones:
+      - Complete first draft by March 2026
+      - Edit and revise by June 2026
+      - Submit to publishers by September 2026
+
+  # Example with app-specific extensions
+  - type: event
+    id: ev_example
+    title: "Extended Example"
+    start: "2025-12-20T10:00:00+09:00"
+    end: "2025-12-20T11:00:00+09:00"
+    x_elysium:
+      focus_mode: "deep"
+      color: "#3B82F6"
+      auto_schedule: true
+    x_custom_app:
+      custom_field: "preserved on round-trip"

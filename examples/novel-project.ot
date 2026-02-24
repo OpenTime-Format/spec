@@ -1,0 +1,52 @@
+# novel-project.ot
+# A project container linking together goals, tasks, and events.
+
+opentime_version: "0.2"
+default_timezone: "Asia/Tokyo"
+
+items:
+  - type: goal
+    id: goal_novel
+    title: "Finish Novel Draft"
+    kind: goal
+    target_date: "2026-03-31"
+    progress: 0.33
+    tags: ["writing", "major"]
+
+  - type: task
+    id: task_outline
+    title: "Outline main story beats"
+    status: done
+    project_id: proj_novel
+    goal_id: goal_novel
+    tags: ["writing"]
+
+  - type: task
+    id: task_chapter_1
+    title: "Draft Chapter 1"
+    status: in_progress
+    project_id: proj_novel
+    goal_id: goal_novel
+    tags: ["writing"]
+
+  - type: event
+    id: ev_deepwork_novel
+    title: "Deep work – worldbuilding"
+    start: "2025-12-05T09:00:00+09:00"
+    end: "2025-12-05T11:00:00+09:00"
+    project_id: proj_novel
+    goal_id: goal_novel
+    tags: ["focus", "writing"]
+
+  - type: project
+    id: proj_novel
+    title: "Write My First Novel"
+    kind: project
+    children:
+      - goal_novel
+      - task_outline
+      - task_chapter_1
+      - ev_deepwork_novel
+    target_date: "2026-03-31"
+    progress: 0.33
+    tags: ["long-term", "creative"]

@@ -1,0 +1,30 @@
+# daily-plan.ot
+# A simple daily schedule mixing tasks, events, and reminders.
+
+opentime_version: "0.2"
+default_timezone: "Asia/Tokyo"
+generated_by: "Elysium 0.3"
+
+items:
+  - type: task
+    id: task_write
+    title: "Write 500 words"
+    status: todo
+    due: "2025-12-04"
+    estimate_minutes: 45
+    tags: ["writing", "daily"]
+
+  - type: event
+    id: ev_deepwork
+    title: "Deep Work – Novel"
+    start: "2025-12-04T09:00:00+09:00"
+    end: "2025-12-04T11:00:00+09:00"
+    location: "Home Office"
+    tags: ["focus", "no-meetings"]
+
+  - type: reminder
+    id: rem_water
+    title: "Drink water"
+    time: "2025-12-04T14:00:00+09:00"
+    repeat: "FREQ=HOURLY;COUNT=4"
+    tags: ["health"]
